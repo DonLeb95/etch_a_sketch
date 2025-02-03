@@ -3,6 +3,17 @@ body{
     flex-direction: column;
 }
 
+.grid-density{
+    align-self: center;
+    box-sizing: border-box;
+    font-size: 30px;
+    width: 300px;
+    margin: 30px;
+    padding: 14px;
+    background-color: rgb(250,250,250);
+    border-radius: 12px;
+}
+
 .grid-container{
     height: 480px;
     width: 480px;
