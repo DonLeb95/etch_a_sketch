@@ -1,5 +1,16 @@
-.grid-container{
+body{
     display: flex;
+    flex-direction: column;
+}
+
+.grid-container{
+    height: 480px;
+    width: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    /*justify-content: space-between;
+    align-content: space-between;*/
 }
 
 .grid-container > div {
