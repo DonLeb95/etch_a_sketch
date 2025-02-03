@@ -1,0 +1,10 @@
+.grid-container{
+    display: flex;
+}
+
+.grid-container > div {
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    border: 2px solid magenta;
+}
