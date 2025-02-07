@@ -20,9 +20,33 @@ function gridBuilder(sqrDim){
     const gridContWidth = gridContData.getPropertyValue("width");
 
     const innerSqrDim = Number(gridContHeight.replace("px","")) / sqrDim +"px";
-    gridOfSquares.forEach((sqr) => sqr.setAttribute("style",
-        `height: ${innerSqrDim}; width: ${innerSqrDim};`))
-    };
+
+    function getRndmNum(min, max) {
+        const minC = Math.ceil(min);
+        const maxF = Math.floor(max);
+        return Math.floor(Math.random() * (maxF - minC + 1) + minC);
+    }
+
+    gridOfSquares.forEach((sqr) => {
+        let count = 10;
+        sqr.setAttribute("style",`
+        height: ${innerSqrDim}; 
+        width: ${innerSqrDim};
+        background-color:transparent;
+        filter: brightness(${count * 10}%)`
+        );
+        sqr.addEventListener("mouseover",()=>{
+            sqr.style.backgroundColor = `rgb(${getRndmNum(0,255)},${getRndmNum(0,255)},${getRndmNum(0,255)})`;
+            sqr.style.filter = `brightness(${count * 10}%)`;
+            if(count >= 1) count--;
+                }
+            )
+        sqr.addEventListener("mouseout", ()=>
+            sqr.style.backgroundColor = `transparent`
+            )
+        }
+    )
+}
 
 gridBuilder(16);
 
